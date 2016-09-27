@@ -1,0 +1,17 @@
+<article>
+    <h1>{{ assignment.title }}</h1>
+    <p>{{assignment.content}}</p>
+    <h3>{{assignment.marks}}</h3>
+    <h3>{{assignment.submission_date}}</h3>
+    
+    <section>
+        {% for question in assignment.question_set.all %}
+            <h2>{{question.question}} : {{ question.marks }}</h2>
+            <section>{% for answer in question.answers_set.all %}
+                <p>{{ answer.answer }}</p>
+                {% endfor %}
+            </section>
+        {% endfor %}     
+    </section>
+    
+</article>

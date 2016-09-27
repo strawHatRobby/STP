@@ -1,0 +1,3 @@
+{% for assignment in assignments %}
+<a href="{% url 'assignment' %}{{assignment.id}}">{{ assignment.title }}</a>
+{% endfor %}
